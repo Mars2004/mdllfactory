@@ -1,0 +1,3 @@
+LIBRARY	testdll_1
+EXPORTS
+	GetDllObject	@1

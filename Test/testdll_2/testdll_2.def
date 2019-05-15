@@ -1,0 +1,5 @@
+LIBRARY	testdll_2
+EXPORTS
+	Increment	@1
+	Decrement	@2
+	GetValue		@3
