@@ -35,10 +35,19 @@ along with Foobar. If not, see <https://www.gnu.org/licenses/>.
 #define MARSTECH_DLLMAINHELPER_H
 
 
+/**************************************************************************************************//**
+* @def			MSV_GET_DLLOBJECT_WITH_ID
+* @brief			Get DLL object.
+* @details		Creates new DLL object and returns it.
+* @param[in]	requestedId			Requested object ID.
+* @param[in]	id						ID of object to create.
+* @param[in]	objectToCreate		Object which will be created.
+* @param[out]	spOut					Created object.
+******************************************************************************************************/
 #define MSV_GET_DLLOBJECT_WITH_ID(requestedId, id, objectToCreate, spOut) \
 if (requestedId.compare(id) == 0) \
 { \
-	spOut.reset(new (std::nothrow) objectToCreate()); \
+	spOut.reset(new (std::nothrow) objectToCreate); \
 	if (!spOut) \
 	{ \
 		return MSV_ALLOCATION_ERROR; \
@@ -46,12 +55,22 @@ if (requestedId.compare(id) == 0) \
 	return MSV_SUCCESS; \
 }
 
+/**************************************************************************************************//**
+* @def			MSV_GETSHARED_DLLOBJECT_WITH_ID
+* @brief			Get shared DLL object.
+* @details		Checks if shared DLL object exists and returns it. If shared object does not exists
+*					creates new shared DLL object, stores it and returns it.
+* @param[in]	requestedId			Requested object ID.
+* @param[in]	id						ID of object to create.
+* @param[in]	objectToCreate		Object which will be created.
+* @param[out]	spOut					Shared object.
+******************************************************************************************************/
 #define MSV_GETSHARED_DLLOBJECT_WITH_ID(requestedId, id, objectToCreate, spShared, spOut) \
 if (requestedId.compare(id) == 0) \
 { \
 	if (!spShared) \
 	{ \
-		spShared.reset(new (std::nothrow) objectToCreate()); \
+		spShared.reset(new (std::nothrow) objectToCreate); \
 		if (!spShared) \
 		{ \
 			return MSV_ALLOCATION_ERROR; \
@@ -61,12 +80,22 @@ if (requestedId.compare(id) == 0) \
 	return MSV_SUCCESS; \
 }
 
+/**************************************************************************************************//**
+* @def			MSV_GETWEAKSHARED_DLLOBJECT_WITH_ID
+* @brief			Get weak shared DLL object.
+* @details		Checks if shared DLL object exists (weak pointer) and returns it. If shared object does not exists
+*					creates new shared DLL object, stores it and returns it.
+* @param[in]	requestedId			Requested object ID.
+* @param[in]	id						ID of object to create.
+* @param[in]	objectToCreate		Object which will be created.
+* @param[out]	spOut					Shared object.
+******************************************************************************************************/
 #define MSV_GETWEAKSHARED_DLLOBJECT_WITH_ID(requestedId, id, objectToCreate, spShared, spOut) \
 if (requestedId.compare(id) == 0) \
 { \
 	if (!(spOut = spShared.lock())) \
 	{ \
-		spOut.reset(new (std::nothrow) objectToCreate()); \
+		spOut.reset(new (std::nothrow) objectToCreate); \
 		if (!spOut) \
 		{ \
 			return MSV_ALLOCATION_ERROR; \

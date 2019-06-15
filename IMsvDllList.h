@@ -65,7 +65,7 @@ public:
 	* @param[in]	id								DLL id.
 	* @param[out]	dllPath						Path to DLL.
 	* @param[out]	spDllDecorator				Shared pointer to DLL/object decorator.
-	* @retval		other error code			When failed.
+	* @retval		other_error_code			When failed.
 	* @retval		MSV_NOT_FOUND_ERROR		When DLL id was not found.
 	* @retval		MSV_SUCCESS					On success.
 	******************************************************************************************************/

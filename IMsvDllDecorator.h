@@ -67,7 +67,7 @@ public:
 	* @details		Decorates dynamic/shared object or interface.
 	* @param[in]	id										Path to DLL library.
 	* @param[in]	spMsvDllAdapter					DLL adapter to decorate.
-	* @retval		other error code					When decoration failed.
+	* @retval		other_error_code					When decoration failed.
 	* @retval		MSV_SUCCESS							On success.
 	******************************************************************************************************/
 	virtual MsvErrorCode DecorateDllObject(const char* id, std::shared_ptr<IMsvDllAdapter> spMsvDllAdapter) = 0;

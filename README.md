@@ -1,12 +1,13 @@
 # MarsTech DLL Factory
- - [Instalation](#instalation)
+ - [Installation](#installation)
 	 - [Configuration](#configuration)
+ - [Usage Example](#usage-example)
  - [Source Code Documentation](#source-code-documentation)
  - [License](#license)
 
 Work In Progress.
 
-## Instalation
+## Installation
 TODO
 
 ### Dependencies
@@ -18,6 +19,11 @@ TODO
 
 ### Configuration
 TODO
+
+## Usage Example
+There is also an [usage example](https://github.com/Mars2004/msys/Example) which uses the most of [MarsTech](https://github.com/Mars2004) projects and libraries.
+Its source codes and readme can be found at:
+ - [https://github.com/Mars2004/msys/Example](https://github.com/Mars2004/msys/Example)
 
 ## Source Code Documentation
 You can find generated source code documentation at [https://www.marstech.cz/projects/mdllfactory/1.0.1/doc](https://www.marstech.cz/projects/mdllfactory/1.0.1/doc).

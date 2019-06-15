@@ -17,7 +17,7 @@ class MsvDllFactory_Mock:
 	public IMsvDllFactory
 {
 public:
-	MOCK_METHOD1(GetDll, MsvErrorCode(const char* id, std::shared_ptr<IMsvDll>& spDll));
+	MOCK_METHOD2(GetDll, MsvErrorCode(const char* id, std::shared_ptr<IMsvDll>& spDll));
 	MOCK_METHOD2(GetDllObject, MsvErrorCode(const char* id, std::shared_ptr<IMsvDllObject>& spDllObject));
 	MOCK_METHOD1(ReleaseDll, MsvErrorCode(const char* id));
 };
